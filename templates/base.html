@@ -42,21 +42,41 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+        <div id="topnav" class="row pt-lg-2">
+            <div
+                class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-white my-0"><strong>snap</strong>dt.</h2>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left text-lg-left d-lg-flex justify-content-center">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        {% include 'includes/mobile-top-header.html' %}
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="#">Features</a>
+                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" href="#">Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-flex justify-content-center">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
+                                <p class="my-0">Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -89,6 +109,9 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row">
+
         </div>
     </header>
 
