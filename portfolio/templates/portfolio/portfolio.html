@@ -25,7 +25,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 my-5">
                     <div class="card h-100 border-0">
                         {% if item.image %}
-                        <a href="">
+                        <a href="{% url 'portfolio:item_detail' item.id %}">
                             <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
                         </a>
                         {% else %}
@@ -52,26 +52,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-sm-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-5">
-                    <hr>
-                </div>
-                {% endif %}-->
                 {% endfor %}
             </div>
         </div>
