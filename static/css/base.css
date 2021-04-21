@@ -27,6 +27,20 @@ body {
     color: #fff;
 }
 
+.portfolio-overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: black;
+	z-index: -1;
+}
+
+.card {
+    background: transparent;
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
