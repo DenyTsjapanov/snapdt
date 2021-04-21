@@ -1,0 +1,74 @@
+[
+  {
+    "pk": 1,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Kunsthal Rotterdam",
+      "description": "A sculpture on the square of the recently re-opened art hall in Rotterdam",
+      "category": 2,
+      "rating": 4.6,
+      "image_url": "",
+      "image": "1.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Eiffel Tower",
+      "description": "Wide angle shot of the Eiffel Tower, on a sping day in Paris.",
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "",
+      "image": "2.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Amsterdam Dam Square",
+      "description": "Evening shot of the sculptures on the Dam Square in Amsterdam. The hazy color of the picture shows how cold it was that night.",
+      "category": 2,
+      "rating": 4.7,
+      "image_url": "",
+      "image": "3.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Eiffel Tower",
+      "description": "Distant shot of the Eiffel Tower.",
+      "category": 3,
+      "rating": 3,
+      "image_url": "",
+      "image": "4.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Vienna",
+      "description": "My first minute arrived in Vienna, I noted this cozy little corner that really made a terrific shot.",
+      "category": 1,
+      "rating": 5,
+      "image_url": "",
+      "image": "5.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "portfolio.item",
+    "fields": {
+      "name": "Vienna",
+      "description": "Panoramic view of the Albertinaplatz, Vienna",
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "",
+      "image": "6.jpg"
+    }
+  }
+]
