@@ -3,7 +3,7 @@
         <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
+                <div><i class="bi bi-person-fill"></i></div>
                 <p class="my-0">Account</p>
             </div>
         </a>
@@ -24,7 +24,7 @@
         <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none"
             href="">
             <div class="text-center">
-                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <div><i class="bi bi-bag-fill"></i></div>
                 <p class="my-0">
                     {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}

@@ -11,7 +11,7 @@ body {
 }
 
 /* from Bulma */
-.icon {
+.bi {
     align-items: center;
     display: inline-flex;
     justify-content: center;
@@ -57,11 +57,17 @@ body {
         left: 0;
         z-index: 1030;
     }
-
-    .header-container {
-        padding-top: 164px;
-    }
 }
+
 .header-container {
         padding-top: 164px;
     }
+
+
+/* CSS for hiding navbar on scroll */
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out;
+}
