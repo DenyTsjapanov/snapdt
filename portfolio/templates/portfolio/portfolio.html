@@ -18,6 +18,21 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6 text-center">
+            <div class="dropdown">
+                <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort by
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'portfolio:items' %}?sort=category&direction=asc">Category</a></li>
+                    <li><a class="dropdown-item" href="{% url 'portfolio:items' %}?sort=rating&direction=desc">Rating</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
@@ -30,8 +45,7 @@
                         </a>
                         {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ item.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
@@ -41,7 +55,7 @@
                         <div class="card-footer bg-transparent pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">{{ product.price }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold">{{ item.price }}</p>
                                     {% if item.rating %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ item.rating }} /
                                         5</small>
@@ -51,6 +65,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                     </div>
                 </div>
                 {% endfor %}

@@ -28,13 +28,23 @@ body {
 }
 
 .portfolio-overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: black;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: black;
+    z-index: -1;
+}
+
+.item-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: black;
+    z-index: -1;
 }
 
 .card {
@@ -60,14 +70,17 @@ body {
 }
 
 .header-container {
-        padding-top: 164px;
-    }
+    padding-top: 164px;
+}
 
 
 /* CSS for hiding navbar on scroll */
-.scrolled-down{
-  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
 }
-.scrolled-up{
-  transform:translateY(0); transition: all 0.3s ease-in-out;
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
 }
