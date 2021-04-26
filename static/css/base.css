@@ -51,6 +51,15 @@ body {
     background: transparent;
 }
 
+.category-link {
+    text-decoration: none;
+    transition: all ease-in-out 0.2s;
+}
+
+.category-link:hover {
+    color: #fff!important;
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {

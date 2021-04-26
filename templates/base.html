@@ -29,6 +29,7 @@
     {% endblock %}
 
     {% block corejs %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"
     <script src="https://kit.fontawesome.com/2ffc1bc183.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
@@ -66,6 +67,9 @@
                                 <a class="nav-link" href="{% url 'portfolio:items' %}">Portfolio</a>
                                 <a class="nav-link" href="#">About</a>
                                 <a class="nav-link" href="#">Donate</a>
+                                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="GET" action="{% url 'portfolio:items' %}">
+                                    <input type="search" class="form-control" placeholder="Search...">
+                                </form>
                             </div>
                         </div>
                     </div>
