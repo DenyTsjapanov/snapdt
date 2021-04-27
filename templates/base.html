@@ -47,8 +47,8 @@
 <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row pt-lg-2 autohide">
-            <div
-                class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center" data-aos="fade-down">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center"
+                data-aos="fade-down">
                 <a href="{% url 'home:home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-white my-0"><strong>snap</strong>dt.</h2>
                 </a>
@@ -107,9 +107,9 @@
                                 <div><i class="bi bi-bag-fill"></i></div>
                                 <p class="my-0">
                                     {% if total %}
-                                    €{{ total|floatformat:2 }}
+                                    € {{ total|floatformat:2 }}
                                     {% else %}
-                                    €0.00
+                                    € 0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -124,7 +124,21 @@
     </header>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -134,10 +148,16 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".toast").toast('show');
+        });
+    </script>
+
     <!-- Animate on scroll script. Credit: https://michalsnik.github.io/aos/ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init( {
+        AOS.init({
             duration: 800,
 
         });
