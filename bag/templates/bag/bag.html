@@ -23,7 +23,66 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive rounded">
-                {{ bag_items }}
+                <table class="table table-sm table-borderless table-light">
+                    <thead class="text-dark">
+                        <tr>
+                            <th scope="col">Product info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                             <img class="img-fluid rounded" src="{{ item.item.image.url }}">
+                        </td>
+                        <td class="py-3"><strong>{{ item.item.name }}</strong></td>
+                        <td class="py-3">€ {{ item.item.price }}</td>
+                        <td class="py-3">{{ item.quantity }}</td>
+                        <td class="py-3">€ {{ item.name }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h6><strong>Bag total: ${{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Grand total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                            {% if free_delivery_delta > 0 %}
+                            <p class="mb-1 text-danger">You could get free delivery by spending just
+                                <strong>${{ free_delivery_delta }}</strong> more!</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{% url 'portfolio:items' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <button type="button" class="btn btn-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z">
+                                        </path>
+                                    </svg>
+                                    Back to portfolio
+                                </button>
+                            </a>
+                            <a href="" class="btn btn-outline-black rounded-0 btn-lg text-right">
+                                <button type="button" class="btn btn-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z">
+                                        </path>
+                                    </svg>
+                                    Secure checkout!
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty</p>
