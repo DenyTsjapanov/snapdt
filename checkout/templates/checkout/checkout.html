@@ -20,12 +20,13 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="mb-4">Shopping bag</h2>
+            <h2 class="mb-4">Checkout</h2>
             <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Order summmary: ({{ item.item_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -38,7 +39,7 @@
             <div class="row">
                 <div class="col-2 mb-1">
                     <a href="{% url 'portfolio:item_detail' item.item.id %}">
-                        {% if item.product.image %}
+                        {% if item.item.image %}
                         <img class="w-100" src="{{ item.item.image.url }}" alt="{{ item.name }}">
                         {% else %}
                         <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
@@ -101,7 +102,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="px-3">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
 
                     <!-- Stripe card element -->
                     <div class="mb-3" id="card-element"></div>
