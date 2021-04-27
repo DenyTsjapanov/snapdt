@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('town_or_city', models.CharField(max_length=40)),
                 ('street_address1', models.CharField(max_length=80)),
                 ('street_address2', models.CharField(blank=True, max_length=80, null=True)),
-                ('county', models.CharField(blank=True, max_length=80, null=True)),
+                ('province', models.CharField(blank=True, max_length=80, null=True)),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('delivery_cost', models.DecimalField(decimal_places=2, default=0, max_digits=6)),
                 ('order_total', models.DecimalField(decimal_places=2, default=0, max_digits=10)),
