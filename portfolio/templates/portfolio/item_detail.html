@@ -50,20 +50,42 @@
                             <p class="mt-3 text-light"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-black rounded-0"
+                                            data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                            <span class="icon">
+                                                <i class="bi bi-dash text-light"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                     <input class="form-control qty_input" type="number" name="quantity" value="1"
                                         min="1" max="99" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black rounded-0"
+                                            data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                            <span class="icon">
+                                                <i class="bi bi-plus text-light"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <a href="{% url 'portfolio:items' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase text-light">Keep Shopping</span>
+                            <a href="{% url 'portfolio:items' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <button type="button" class="btn btn-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z">
+                                        </path>
+                                    </svg>
+                                    View portfolio
+                                </button>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5 text-light"
+                                value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
@@ -79,4 +101,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'portfolio/includes/quantity_input_script.html' %}
 {% endblock %}
