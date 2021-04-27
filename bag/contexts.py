@@ -1,19 +1,20 @@
 from decimal import Decimal
 from django.conf import settings
 
-def bag_contents(reqeust):
+
+def bag_contents(request):
 
     bag_items = []
     total = 0
     product_count = 0
 
-    if total < settings.FREE_DELIVERY_THERSHOLD:
+    if total > 0 and total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = Decimal(settings.STANDARD_DELIVERY_RATE)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
 
     context = {

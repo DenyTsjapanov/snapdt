@@ -23,13 +23,14 @@
         rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <script src="https://kit.fontawesome.com/2ffc1bc183.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
@@ -47,7 +48,7 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row pt-lg-2 autohide">
             <div
-                class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center">
+                class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center" data-aos="fade-down">
                 <a href="{% url 'home:home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-white my-0"><strong>snap</strong>dt.</h2>
                 </a>
@@ -67,7 +68,8 @@
                                 <a class="nav-link" href="{% url 'portfolio:items' %}">Portfolio</a>
                                 <a class="nav-link" href="#">About</a>
                                 <a class="nav-link" href="#">Donate</a>
-                                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="GET" action="{% url 'portfolio:items' %}">
+                                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="GET"
+                                    action="{% url 'portfolio:items' %}">
                                     <input type="search" class="form-control" placeholder="Search...">
                                 </form>
                             </div>
@@ -132,6 +134,14 @@
     {% endblock %}
 
     {% block postloadjs %}
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init( {
+            duration: 800,
+
+        });
+    </script>
     {% endblock %}
 
 
