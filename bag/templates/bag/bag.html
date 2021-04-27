@@ -27,11 +27,11 @@
                 <table class="table table-sm table-borderless table-light">
                     <thead class="text-dark">
                         <tr>
-                            <th scope="col">Product info</th>
-                            <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Subtotal</th>
+                            <th class="p-3" scope="col">Product info</th>
+                            <th class="p-3" scope="col"></th>
+                            <th class="p-3" scope="col">Price</th>
+                            <th class="p-3" scope="col">Quantity</th>
+                            <th class="p-3" scope="col">Subtotal</th>
                         </tr>
                     </thead>
 
@@ -77,7 +77,7 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
+                        <td colspan="5" class="pt-5 px-3 text-right">
                             <h6><strong>Bag total: € {{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: € {{ delivery|floatformat:2 }}</h6>
                             <h4 class="mt-4"><strong>Grand total: € {{ grand_total|floatformat:2 }}</strong></h4>

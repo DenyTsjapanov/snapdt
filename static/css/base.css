@@ -73,6 +73,12 @@ body {
     z-index: 999;
 }
 
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
