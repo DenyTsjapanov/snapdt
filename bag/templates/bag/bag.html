@@ -37,19 +37,48 @@
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                             <img class="img-fluid rounded" src="{{ item.item.image.url }}">
+                            <img class="img-fluid rounded" src="{{ item.item.image.url }}">
                         </td>
                         <td class="py-3"><strong>{{ item.item.name }}</strong></td>
                         <td class="py-3">€ {{ item.item.price }}</td>
-                        <td class="py-3">{{ item.quantity }}</td>
+                        <td class="py-3">
+                            <form class="form update-form" method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="bi bi-dash text-dark"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}"
+                                            min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="bi bi-plus text-dark"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+
+                        </td>
                         <td class="py-3">€ {{ item.name }}</td>
                     </tr>
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong>Bag total: ${{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4"><strong>Grand total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                            <h6><strong>Bag total: € {{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: € {{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Grand total: € {{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-danger">You could get free delivery by spending just
                                 <strong>${{ free_delivery_delta }}</strong> more!</p>
@@ -101,4 +130,27 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'portfolio/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+     $('.remove-item').click(function(e) {
+        var csrftoken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}`;
+        
+        $.post(url)
+        .done(function() {
+            location.reload();
+        });
+    })
+</script>
 {% endblock %}
