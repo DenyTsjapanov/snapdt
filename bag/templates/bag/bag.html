@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -42,7 +43,7 @@
                         <td class="py-3"><strong>{{ item.item.name }}</strong></td>
                         <td class="py-3">€ {{ item.item.price }}</td>
                         <td class="py-3">
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'bag:adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -54,8 +55,9 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}"
-                                            min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <input class="form-control form-control-sm qty_input" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -71,7 +73,7 @@
                             <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
 
                         </td>
-                        <td class="py-3">€ {{ item.name }}</td>
+                        <td class="py-3">€ {{ item.item.price | calc_subtotal:item.quantity }}</td>
                     </tr>
                     {% endfor %}
                     <tr>
@@ -81,7 +83,7 @@
                             <h4 class="mt-4"><strong>Grand total: € {{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-danger">You could get free delivery by spending just
-                                <strong>${{ free_delivery_delta }}</strong> more!</p>
+                                <strong>€ {{ free_delivery_delta }}</strong> more!</p>
                             {% endif %}
                         </td>
                     </tr>
@@ -137,20 +139,21 @@
 {% include 'portfolio/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
-     $('.remove-item').click(function(e) {
-        var csrftoken = "{{ csrf_token }}";
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
-        
-        $.post(url)
-        .done(function() {
-            location.reload();
-        });
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
