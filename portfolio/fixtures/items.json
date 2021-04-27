@@ -8,7 +8,8 @@
       "category": 2,
       "rating": 4.6,
       "image_url": "",
-      "image": "1.jpg"
+      "image": "1.jpg",
+      "price": 34.99
     }
   },
   {
@@ -20,7 +21,8 @@
       "category": 3,
       "rating": 4.6,
       "image_url": "",
-      "image": "2.jpg"
+      "image": "2.jpg",
+      "price": 34.99
     }
   },
   {
@@ -32,7 +34,8 @@
       "category": 2,
       "rating": 4.7,
       "image_url": "",
-      "image": "3.jpg"
+      "image": "3.jpg",
+      "price": 34.99
     }
   },
   {
@@ -44,7 +47,8 @@
       "category": 3,
       "rating": 3,
       "image_url": "",
-      "image": "4.jpg"
+      "image": "4.jpg",
+      "price": 34.99
     }
   },
   {
@@ -56,7 +60,8 @@
       "category": 1,
       "rating": 5,
       "image_url": "",
-      "image": "5.jpg"
+      "image": "5.jpg",
+      "price": 34.99
     }
   },
   {
@@ -68,7 +73,8 @@
       "category": 1,
       "rating": 4.7,
       "image_url": "",
-      "image": "6.jpg"
+      "image": "6.jpg",
+      "price": 34.99
     }
   }
 ]

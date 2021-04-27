@@ -10,6 +10,7 @@ class ItemAdmin(admin.ModelAdmin):
         'category',
         'rating',
         'image',
+        'price',
     )
 
 
