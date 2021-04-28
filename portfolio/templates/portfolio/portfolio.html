@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="text-white">View our work</h2>
+            <h2 class="text-white text-uppercase"><strong>View our work</strong></h2>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'portfolio:items' %}?category={{ c.name }}">
                 <span class="p-2 mt-2 badge bg-light text-dark">{{ c.friendly_name }}</span>
@@ -83,7 +83,7 @@
                         <div class="card-footer bg-transparent pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">€ {{ item.price }}</p>
+                                    <!-- <p class="lead mb-0 text-left font-weight-bold">€ {{ item.price }}</p> -->
                                     {% if item.rating %}
                                     <small class="text-muted"><i class="bi bi-star-fill"></i>{{ item.rating }} /
                                         5</small>

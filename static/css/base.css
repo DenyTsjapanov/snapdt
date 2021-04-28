@@ -3,24 +3,55 @@ html {
 }
 
 body {
-    background: #222f3e;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #222f3e, #4C698B, #B56576, #253746, #E56B6F);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .home-header {
     background: #34495e;
+    width: fit-content;
+    z-index: 9999;
 }
 
-.navbrand-logo {
-    background: #576574;
+.home-header2 {
+    width: 300px;
+    height: 300px;
+    top: 100px;
+    right: -150px;
+    background: #355070;
+    position: relative;
 }
 
+.navbrand-logo,
+.account-bag-nav,
 .mobile-navbar-color {
-    background: #576574;
+    background: #34495e;
 }
+
+.collapsed-navbar-icon {
+    padding: 1rem;
+    background: #34495e;
+}
+
 
 .navbar-nav {
     font-weight: 700;
@@ -40,7 +71,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: #2c3e50;
+    background: #B56576;
     z-index: -1;
 }
 

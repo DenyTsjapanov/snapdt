@@ -71,7 +71,7 @@
         </div>
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
-            <form action="{% url 'checkout:checkout' %}" method="POST" id="payment_form">
+            <form action="{% url 'checkout:checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
@@ -122,7 +122,7 @@
                             Adjust bag
                         </button>
                     </a>
-                    <button id="submit-button" type="button" class="btn btn-primary">
+                    <button id="submit-button" class="btn btn-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
                             <path

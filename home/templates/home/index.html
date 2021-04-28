@@ -12,19 +12,20 @@
 {% block content %}
 <div class="container h-100">
     <div class="row h-100">
-        <div class="col-6 my-auto"></div>
-        <div class="col-7 col-md-6 my-auto home-header">
+        <div class="col-4 home-header2" data-aos="fade-down"></div>
+        <div class="col-8 my-auto home-header" data-aos="fade-right" data-aos-delay="200">
             <div data-aos="fade-down" data-aos-delay="200">
-                <h1 class="display-4 text-white px-3 pt-3 text-uppercase" style="font-weight: 500;">Welcome to <span
-                        style="font-weight: 700; text-transform: lowercase;">snap</span><span style="text-transform: lowercase;">dt!</span></h1>
+                <h2 class="display-4 text-white px-3 pt-3 text-uppercase" style="font-weight: 700;">Welcome to <span
+                        style="font-weight: 900; text-transform: lowercase;">snap</span><span
+                        style="text-transform: lowercase;">dt!</span></h2>
             </div>
             <div data-aos="fade-up" data-aos-delay="400">
-                <h3 class="text-white px-3 pt-3 text-uppercase">Capturing beautiful moments.</h3>
-                <h6 class="text-light px-3 pt-3 text-uppercase">Uploading new content every week!</h6>
+                <h2 class="text-white px-3 pt-3 text-uppercase">Capturing beautiful <strong>moments</strong>.</h2>
+                <h2 class="text-light px-3 pt-3 text-uppercase">Uploading new content every week!</h2>
             </div>
             <div class="my-5 px-3 pt-3" data-aos="fade-up" data-aos-delay="600">
                 <a href="{% url 'portfolio:items' %}" class="py-3">
-                    <button type="button" class="btn btn-light">VIEW
+                    <button type="button" class="btn btn-lg btn-light rounded-0">VIEW
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                             <path
@@ -35,6 +36,7 @@
                 </a>
             </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
