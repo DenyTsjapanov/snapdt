@@ -19,7 +19,7 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -49,10 +49,10 @@
 <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row pt-lg-2 autohide">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center"
-                data-aos="fade-down">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center navbrand-logo"
+                data-aos="fade-right">
                 <a href="{% url 'home:home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-white my-0"><strong>snap</strong>dt.</h2>
+                    <h2 class="text-white my-0"><strong>snap</strong>dt.</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left text-lg-left d-lg-flex justify-content-center">
@@ -66,20 +66,15 @@
                         {% include 'includes/mobile-top-header.html' %}
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link" href="#">Home</a>
-                                <a class="nav-link" href="{% url 'portfolio:items' %}">Portfolio</a>
-                                <a class="nav-link" href="#">About</a>
-                                <a class="nav-link" href="#">Donate</a>
-                                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="GET"
-                                    action="{% url 'portfolio:items' %}">
-                                    <input type="search" class="form-control" placeholder="Search...">
-                                </form>
+                                <a class="nav-link text-uppercase" href="{% url 'home:home' %}" data-aos-delay="800" data-aos="fade-down">Home</a>
+                                <a class="nav-link text-uppercase" href="{% url 'portfolio:items' %}"data-aos-delay="1000" data-aos="fade-down">Portfolio</a>
+                                <a class="nav-link text-uppercase" href="#" data-aos-delay="1200" data-aos="fade-down">About</a>
                             </div>
                         </div>
                     </div>
                 </nav>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-flex justify-content-center">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-flex justify-content-center" data-aos-delay="1400" data-aos="fade-left">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-bs-toggle="dropdown"

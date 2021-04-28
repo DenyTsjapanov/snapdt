@@ -3,20 +3,27 @@ html {
 }
 
 body {
-    background: url('/media/hero-image.jpg') no-repeat center center fixed;
+    background: #222f3e;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #fff;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* from Bulma */
-.bi {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+.home-header {
+    background: #34495e;
+}
+
+.navbrand-logo {
+    background: #576574;
+}
+
+.mobile-navbar-color {
+    background: #576574;
+}
+
+.navbar-nav {
+    font-weight: 700;
 }
 
 .cta-button {
@@ -33,7 +40,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: black;
+    background: #2c3e50;
     z-index: -1;
 }
 
@@ -43,7 +50,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: black;
+    background: #34495e;
     z-index: -1;
 }
 
@@ -57,7 +64,7 @@ body {
 }
 
 .category-link:hover {
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .update-link,

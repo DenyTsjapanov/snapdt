@@ -13,18 +13,26 @@
 <div class="container h-100">
     <div class="row h-100">
         <div class="col-6 my-auto"></div>
-        <div class="col-7 col-md-6 my-auto">
-            <div data-aos="fade-down">
-                <h1 class="display-4 logo-font text-white" style="font-weight: 500;">Welcome to <span
-                        style="font-weight: 700;">snap</span>dt!</h1>
+        <div class="col-7 col-md-6 my-auto home-header">
+            <div data-aos="fade-down" data-aos-delay="200">
+                <h1 class="display-4 text-white px-3 pt-3 text-uppercase" style="font-weight: 500;">Welcome to <span
+                        style="font-weight: 700; text-transform: lowercase;">snap</span><span style="text-transform: lowercase;">dt!</span></h1>
             </div>
-            <div data-aos="fade-up">
-                <h3 class="logo-font text-white">Capturing beautiful moments.</h3>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-white px-3 pt-3 text-uppercase">Capturing beautiful moments.</h3>
+                <h6 class="text-light px-3 pt-3 text-uppercase">Uploading new content every week!</h6>
             </div>
-            <div class="my-5">
-                <h1>
-                    <a href="{% url 'portfolio:items' %}" class="cta-button btn btn-lg btn-light py-3">View</a>
-                </h1>
+            <div class="my-5 px-3 pt-3" data-aos="fade-up" data-aos-delay="600">
+                <a href="{% url 'portfolio:items' %}" class="py-3">
+                    <button type="button" class="btn btn-light">VIEW
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z">
+                            </path>
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
     </div>

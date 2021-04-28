@@ -1,38 +1,40 @@
-<ul class="list-inline list-unstyled text-center text-lg-right my-0 justify-content-end">
-    <li class="list-inline-item dropdown">
-        <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <div class="text-center">
-                <div><i class="bi bi-person-fill"></i></div>
-                <p class="my-0">Account</p>
+<div class="mobile-navbar-color d-lg-none">
+    <ul class="list-inline list-unstyled text-center text-lg-right my-0 justify-content-end">
+        <li class="list-inline-item dropdown">
+            <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <div><i class="bi bi-person-fill"></i></div>
+                    <p class="my-0">Account</p>
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
             </div>
-        </a>
-        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
-            {% endif %}
-            <a href="" class="dropdown-item">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-            {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-            {% endif %}
-        </div>
-    </li>
-    <li class="list-inline-item">
-        <a class="{% if total %}text-warning font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none"
-            href="{% url 'bag:view_bag' %}">
-            <div class="text-center">
-                <div><i class="bi bi-bag-fill"></i></div>
-                <p class="my-0">
-                    {% if total %}
-                    € {{ total|floatformat:2 }}
-                    {% else %}
-                    € 0.00
-                    {% endif %}
-                </p>
-            </div>
-        </a>
-    </li>
-</ul>
+        </li>
+        <li class="list-inline-item">
+            <a class="{% if total %}text-warning font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none"
+                href="{% url 'bag:view_bag' %}">
+                <div class="text-center">
+                    <div><i class="bi bi-bag-fill"></i></div>
+                    <p class="my-0">
+                        {% if total %}
+                        € {{ total|floatformat:2 }}
+                        {% else %}
+                        € 0.00
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
