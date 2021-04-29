@@ -52,13 +52,13 @@
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center navbrand-logo"
                 data-aos="fade-right">
                 <a href="{% url 'home:home' %}" class="nav-link main-logo-link">
-                    <h2 class="text-white my-0"><strong>snap</strong>dt.</h2>
+                    <h2 class="text-white my-0" style="text-transform: lowercase;"><strong>snap</strong>dt.</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-left text-lg-left d-lg-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
                     <div class="container-fluid">
-                        <div class="collapsed-navbar-icon d-none">
+                        <div class="collapsed-navbar-icon d-lg-none">
                             <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                                 aria-expanded="false" aria-label="Toggle navigation">MENU
@@ -67,11 +67,11 @@
                         {% include 'includes/mobile-top-header.html' %}
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link text-uppercase" href="{% url 'home:home' %}" data-aos-delay="800"
+                                <a class="nav-link text-uppercase text-white" href="{% url 'home:home' %}" data-aos-delay="800"
                                     data-aos="fade-down">Home</a>
-                                <a class="nav-link text-uppercase" href="{% url 'portfolio:items' %}"
+                                <a class="nav-link text-uppercase text-white" href="{% url 'portfolio:items' %}"
                                     data-aos-delay="1000" data-aos="fade-down">Portfolio</a>
-                                <a class="nav-link text-uppercase" href="#" data-aos-delay="1200"
+                                <a class="nav-link text-uppercase text-white" href="#" data-aos-delay="1200"
                                     data-aos="fade-down">About</a>
                             </div>
                         </div>
@@ -92,9 +92,9 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item text-uppercase">Product Management</a>
+                            <a href="" class="dropdown-item text-uppercase">Product <strong>Management</strong></a>
                             {% endif %}
-                            <a href="" class="dropdown-item text-uppercase">My Profile</a>
+                            <a href="" class="dropdown-item text-uppercase">My <strong>Profile</strong></a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item text-uppercase">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item text-uppercase">Register</a>

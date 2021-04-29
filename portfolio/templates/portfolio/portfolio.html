@@ -44,9 +44,9 @@
             </div>
         </div>
         <div class="col-12 col-md-6 order-md-first">
-            <p class="text-muted mt-3 text-center text-md-left">
+            <p class="text-light mt-3 text-center text-md-left">
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
-                <span class="text-muted"><a href="{% url 'portfolio:items' %}" class="text-light"
+                <span class="text-light"><a href="{% url 'portfolio:items' %}" class="text-light"
                         style="text-decoration: none;">All</a> | </span>
                 {% endif %}
                 {{ items|length }} items{% if search_term %} found for
@@ -66,15 +66,15 @@
                             <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
                         </a>
                         {% else %}
-                        <a href="">
+                        <a href="{% url 'portfolio:item_detail' item.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <p class="mb-0">{{ item.name }}</p>
+                            <h4 class="mb-0"><a class="text-white" href="{% url 'portfolio:item_detail' item.id %}"><strong>{{ item.name }}</strong></a></h4>
                             {% if item.category %}
                             <p class="small mt-1 mb-0">
-                                <a class="text-muted category-link"
+                                <a class="text-light category-link"
                                     href="{% url 'portfolio:items' %}?category={{ item.category.name }}">{{ item.category.friendly_name }}
                                 </a>
                             </p>
@@ -85,10 +85,10 @@
                                 <div class="col">
                                     <!-- <p class="lead mb-0 text-left font-weight-bold">€ {{ item.price }}</p> -->
                                     {% if item.rating %}
-                                    <small class="text-muted"><i class="bi bi-star-fill"></i>{{ item.rating }} /
+                                    <small class="text-light"><i class="bi bi-star-fill"></i>{{ item.rating }} /
                                         5</small>
                                     {% else %}
-                                    <small class="text-muted">No Rating</small>
+                                    <small class="text-light">No Rating</small>
                                     {% endif %}
                                 </div>
                             </div>

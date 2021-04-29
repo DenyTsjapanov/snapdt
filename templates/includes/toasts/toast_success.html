@@ -1,11 +1,11 @@
-<div class="toast message-container" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast message-container text-dark" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header">
         <strong class="me-auto">Success</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
+    <div class="toast-body bg-light">
         <div class="row">
             <div class="col">
                 {{ message }}
@@ -40,7 +40,7 @@
                 </p>
                 {% endif %}
                 <a href="{% url 'bag:view_bag' %}" class="btn btn-outline-black rounded-0 btn-lg text-right">
-                    <button type="button" class="btn btn-success">
+                    <button type="button" class="btn btn-lg add-to-cart-btn text-light rounded-0 border-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
                             <path
