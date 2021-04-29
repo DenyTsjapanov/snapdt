@@ -7,7 +7,7 @@ body {
     height: calc(100vh - 164px);
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(-110deg, #687980, #4C698B, #B56576);
+    background: linear-gradient(-110deg, #02334a, #513e5c, #a9bcc6);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     text-transform: uppercase;
@@ -31,12 +31,16 @@ a {
     }
 }
 
+#topnav {
+    background: #252b31;
+}
+
 .navbar-nav .nav-link:hover {
-    color: #dddddd!important;
+    color: #dddddd !important;
 }
 
 .home-header {
-    background: #34495e;
+    background: #252b31;
     width: fit-content;
     z-index: 9999;
 }
@@ -46,22 +50,9 @@ a {
     height: 300px;
     top: 100px;
     right: -150px;
-    background: #355070;
+    background: #bbbfca;
     position: relative;
 }
-
-.navbrand-logo,
-.account-bag-nav,
-.mobile-navbar-color {
-    background: #34495e;
-}
-
-.collapsed-navbar-icon {
-    padding: 1rem;
-    background: #34495e;
-    height: 64px;
-}
-
 
 .navbar-nav {
     font-weight: 700;
@@ -81,12 +72,11 @@ a {
     top: 0;
     left: 0;
     position: fixed;
-    background: #B56576;
     z-index: -1;
-    background: -webkit-linear-gradient(110deg, #222f3e 60%, #B56576 60%);
-    background: -o-linear-gradient(110deg, #222f3e 60%, #B56576 60%);
-    background: -moz-linear-gradient(110deg, #222f3e 60%, #B56576 60%);
-    background: linear-gradient(110deg, #222f3e 60%, #B56576 60%);
+    background: -webkit-linear-gradient(110deg, #3c5b74 60%, #d49c6b 60%);
+    background: -o-linear-gradient(110deg, #3c5b74 60%, #d49c6b 60%);
+    background: -moz-linear-gradient(110deg, #3c5b74 60%, #d49c6b 60%);
+    background: linear-gradient(110deg, #3c5b74 60%, #d49c6b 60%);
 }
 
 .item-overlay {
@@ -96,10 +86,36 @@ a {
     left: 0;
     position: fixed;
     z-index: -1;
-    background: -webkit-linear-gradient(110deg, #222f3e 60%, #6e7582 60%);
-    background: -o-linear-gradient(110deg, #222f3e 60%, #6e7582 60%);
-    background: -moz-linear-gradient(110deg, #222f3e 60%, #6e7582 60%);
-    background: linear-gradient(110deg, #222f3e 60%, #6e7582 60%);
+    background: -webkit-linear-gradient(110deg, #5e6668 60%, #565462 60%);
+    background: -o-linear-gradient(110deg, #5e6668 60%, #565462 60%);
+    background: -moz-linear-gradient(110deg, #5e6668 60%, #565462 60%);
+    background: linear-gradient(110deg, #5e6668 60%, #565462 60%);
+}
+
+.bag-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    background: -webkit-linear-gradient(110deg, #84693b 60%, #565462 60%);
+    background: -o-linear-gradient(110deg, #84693b 60%, #565462 60%);
+    background: -moz-linear-gradient(110deg, #84693b 60%, #565462 60%);
+    background: linear-gradient(110deg, #84693b 60%, #565462 60%);
+}
+
+.checkout-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    background: -webkit-linear-gradient(110deg, #3c5b74 60%, #84693b 60%);
+    background: -o-linear-gradient(110deg, #3c5b74 60%, #84693b 60%);
+    background: -moz-linear-gradient(110deg, #3c5b74 60%, #84693b 60%);
+    background: linear-gradient(110deg, #3c5b74 60%, #84693b 60%);
 }
 
 .card {
@@ -111,12 +127,6 @@ a {
 .card:hover {
     transform: translateY(-2%);
     color: #dddddd;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 20vw;
-    object-fit: cover;
 }
 
 .add-to-cart-btn {
