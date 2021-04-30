@@ -25,14 +25,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-light">Order summmary: ({{ item.item_count }})</p>
+        <div class="col-12 col-lg-6 order-lg-last mb-5 bg-white text-dark h-100 p-3">
+            <p>Order summmary: ({{ item.item_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-light">Item</p>
+                    <p class="mb-1 mt-0 smallt">Item</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-light">Subtotal</p>
+                    <p class="mb-1 mt-0 small">Subtotal</p>
                 </div>
             </div>
             {% for item in bag_items %}
