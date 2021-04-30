@@ -23,6 +23,20 @@
             <hr>
         </div>
     </div>
+    <div class="row">
+        <div class="col-we col-lg-6">
+            <p>Default delivery information</p>
+            <form action="{% url 'profiles:profile' %}" method="POST" id="profile-update-form" class="mt-3">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-lg btn-dark rounded-0 border-0" type="submit">Update information</button>
+            </form>
+        </div>
+        <div class="col-we col-lg-6">
+            <p>Order history</p>
+            {{ orders }}
+        </div>
+    </div>
     {{ profile }}
 </div>
 {% endblock %}
