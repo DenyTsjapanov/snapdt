@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="text-white text-uppercase"><strong>View our work</strong></h2>
+            <h2 class="text-white text-uppercase" data-aos="fade-right"><strong>View our work</strong></h2>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'portfolio:items' %}?category={{ c.name }}">
                 <span class="p-2 mt-2 badge bg-light text-dark">{{ c.friendly_name }}</span>
@@ -54,12 +54,12 @@
             </p>
         </div>
     </div>
-    <div class="row">
-        <div class="container col-10 offset-1">
+    <div class="row portfolio-container">
+        <div class="container col-10 offset-1" data-aos="fade-up">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for item in items %}
-                <div class="col-sm-6 col-md-6 col-lg-4 my-5" data-aos="fade-up">
+                <div class="col-sm-6 col-md-6 col-lg-4 my-3 p-3">
                     <div class="card h-100 border-0">
                         {% if item.image %}
                         <a href="{% url 'portfolio:item_detail' item.id %}">
@@ -80,10 +80,9 @@
                             </p>
                             {% endif %}
                         </div>
-                        <div class="card-footer bg-transparent pt-0 border-0 text-left">
+                        <!-- <div class="card-footer bg-transparent pt-0 border-0 text-left">
                             <div class="row">
-                                <div class="col">
-                                    <!-- <p class="lead mb-0 text-left font-weight-bold">€ {{ item.price }}</p> -->
+                                <div class="col item-rating">
                                     {% if item.rating %}
                                     <small class="text-light"><i class="bi bi-star-fill"></i>{{ item.rating }} /
                                         5</small>
@@ -93,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
+                        <hr> -->
                     </div>
                 </div>
                 {% endfor %}

@@ -129,6 +129,23 @@ a {
     color: #dddddd;
 }
 
+.card-body {
+    opacity: 0;
+    text-decoration: none;
+    cursor: none;
+    transform: translateY(-150%);
+    transition: all ease-in-out 0.2s;
+}
+
+.card:hover .card-body {
+    color: white;
+    opacity: 1;
+}
+
+.portfolio-container {
+    background: #252b3188;
+}
+
 .add-to-cart-btn {
     background: #00adb5;
 }
