@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,11 +123,15 @@ WSGI_APPLICATION = 'snapdt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+DATABASE = {
+    'default': dj_database_url.parse('postgres://bknbvqalllaeef:63bc46186769bf543bdfd3d4c349a4733ee3d3cf77aa2dd8f3594deb5f70e49d@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/dfpt1tflibe18c'),
 }
 
 

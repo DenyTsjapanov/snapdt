@@ -1,0 +1,13 @@
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
+#profile-update-form input {
+    border-radius: 0;
+
+}
+
+.stripe-style-input {
+    border-radius: 0!important;
+}
