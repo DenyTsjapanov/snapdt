@@ -1,6 +1,6 @@
 <h1 align="center">snapdt.</h1>
 
-[View the live project here.](snapdt.herokuapp.com)
+[View the live project here.](https://snapdt.herokuapp.com)
 
 Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography enthusiasts. The purpose of the project is that users can view photographs updated frequently by the developer. Upon viewing, users can order the photographs, printed on a canvas, or simply appreciate them.
 
