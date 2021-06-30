@@ -2,7 +2,7 @@
 
 [View the live project here.](snapdt.herokuapp.com)
 
-Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography enthusiasts. 
+Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography enthusiasts. The purpose of the project is that users can view photographs updated frequently by the developer. Upon viewing, users can order the photographs, printed on a canvas, or simply appreciate them.
 
 ## User Experience (UX)
 
