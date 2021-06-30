@@ -9,6 +9,7 @@ def update_on_save(sender, instance, created, **kwargs):
     """
     Update order total on lineitem update/create
     """
+    print("DEBUG Order being updated via the signal")
     instance.order.update_total()
 
 
@@ -18,4 +19,5 @@ def update_on_delete(sender, instance, **kwargs):
     Update order total on lineitem delete
     """
     print('delete signal received!')
+    print("DEBUG Order being updated via the signal")
     instance.order.update_total()

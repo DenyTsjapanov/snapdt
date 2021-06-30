@@ -52,6 +52,7 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
+            print(f"DEBUG Order Form valid. form_data={form_data}")
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
@@ -140,6 +141,8 @@ def checkout_success(request, order_number):
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
+
+        print(f"DEBUG: Order {order.__dict__}")
 
         # Save the user's info
         if save_info:

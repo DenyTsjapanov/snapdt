@@ -74,6 +74,7 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 order_exists = True
+                print(f"DEBUG: Order {order}")
                 break
             except Order.DoesNotExist:
                 attempt += 1
@@ -83,6 +84,7 @@ class StripeWH_Handler:
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
+            print(f"DEBUG: Creating new Order!")
             order = None
             try:
                 order = Order.objects.create(
