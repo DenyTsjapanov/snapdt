@@ -1,4 +1,4 @@
-<img src="docs/img/responsive.png" width="600" alt="Responsive">
+<img src="docs/img/responsive.png" width="1000" alt="Responsive">
 
 [View the live project here.](https://snapdt.herokuapp.com)
 
@@ -37,7 +37,7 @@ Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography 
     -   Home Page wireframe - [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/wireframes/1.pdf)
     -   Portfolio wireframe - [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/wireframes/2.pdf)
 
-    -   Home PAge screenshot- [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/img/1.png)
+    -   Home Page screenshot- [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/img/1.png)
 
 ## Features
 
@@ -192,17 +192,11 @@ The website is now deployed and can be viewed at:
 
 ### Code
 
--   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
-
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
-
--   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
+-   [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
 ### Content
 
 -   All content was written by the developer.
-
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 
@@ -210,6 +204,6 @@ The website is now deployed and can be viewed at:
 
 ### Acknowledgements
 
--   My Mentor for continuous helpful feedback.
+-   My Mentor, Reuben Ferrante for continuous helpful feedback.
 
--   Tutor support at Code Institute for their support.
+-   Friends and family for giving their feedback on the project.
