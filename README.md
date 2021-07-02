@@ -1,4 +1,4 @@
-<img src="docs/img/responsive.png" width="100vw" alt="Responsive">
+<img src="docs/img/responsive.png" width="600" alt="Responsive">
 
 [View the live project here.](https://snapdt.herokuapp.com)
 
@@ -32,11 +32,12 @@ Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography 
     -   #### Imagery
         -   Imagery is the core of this site, since it's purpose and rationale evolves around photography. To avoid a cluttered look by having too many picture and photographs, I decided to fill the backgrounds with solid colors.
 
-*   ### Screenshots
+*   ### wireframes/screenshots
 
-    -   Home Page screenshot- [View](https://github.com/)
+    -   Home Page wireframe - [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/wireframes/1.pdf)
+    -   Portfolio wireframe - [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/wireframes/2.pdf)
 
-    -   Mobile screenshot- [View](https://github.com/)
+    -   Home PAge screenshot- [View](https://github.com/DenyTsjapanov/snapdt/tree/master/docs/img/1.png)
 
 ## Features
 
@@ -81,7 +82,7 @@ Snapdt. (pronounced as 'snapped') is a portfolio website by and for photography 
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/DenyTsjapanov/snapdt/blob/master/docs/validation_results/W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).pdf)
 
 ### Testing User Stories from User Experience (UX) Section
 
