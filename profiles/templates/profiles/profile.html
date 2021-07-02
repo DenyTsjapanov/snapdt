@@ -61,7 +61,7 @@
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>€ {{ grand_total|floatformat:2 }}</td>
+                            <td>€ {{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

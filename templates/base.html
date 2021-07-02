@@ -47,6 +47,7 @@
 </head>
 
 <body>
+    <!-- Navigation bar -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row pt-lg-2 autohide">
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-lg-flex justify-content-center navbrand-logo"
@@ -67,8 +68,8 @@
                         {% include 'includes/mobile-top-header.html' %}
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link text-uppercase text-white" href="{% url 'home:home' %}" data-aos-delay="800"
-                                    data-aos="fade-down">Home</a>
+                                <a class="nav-link text-uppercase text-white" href="{% url 'home:home' %}"
+                                    data-aos-delay="800" data-aos="fade-down">Home</a>
                                 <a class="nav-link text-uppercase text-white" href="{% url 'portfolio:items' %}"
                                     data-aos-delay="1000" data-aos="fade-down">Portfolio</a>
                                 <a class="nav-link text-uppercase text-white" href="#" data-aos-delay="1200"
@@ -78,6 +79,7 @@
                     </div>
                 </nav>
             </div>
+            <!-- Account and cart section -->
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 d-none d-lg-flex justify-content-center account-bag-nav"
                 data-aos="fade-left">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
@@ -94,7 +96,8 @@
                             {% if request.user.is_superuser %}
                             <a href="" class="dropdown-item text-uppercase">Product <strong>Management</strong></a>
                             {% endif %}
-                            <a href="{% url 'profiles:profile' %}" class="dropdown-item text-uppercase">My <strong>Profile</strong></a>
+                            <a href="{% url 'profiles:profile' %}" class="dropdown-item text-uppercase">My
+                                <strong>Profile</strong></a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item text-uppercase">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item text-uppercase">Register</a>
@@ -125,6 +128,7 @@
         </div>
     </header>
 
+    <!--Messages-->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -148,6 +152,69 @@
 
     {% block content %}
     {% endblock %}
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container p-4">
+
+            <!-- Social media -->
+            <section class="mb-4">
+                <a class="btn btn-floating m-1 social-media-icon" style="background-color: #fff" href="#!"
+                    role="button"><i class="bi bi-github"></i></a>
+            </section>
+
+
+            <!-- Newsletter subscribe -->
+            <section class="">
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Sign up for our newsletter</strong>
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form5Example2" class="form-control" />
+                                <label class="form-label" for="form5Example2">Email address</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-4">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="mb-4">
+                <p>
+                    While you're here, go ahead and check out our other projects!
+                </p>
+            </section>
+
+            <!-- Other projects links -->
+            <section class="">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">"What's for dinner?"</h5>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <h5>"WANTiT"</h5>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-white">DENY TSJAPANOV</a>
+        </div>
+
+    </footer>
+
 
     {% block postloadjs %}
     <script type="text/javascript">

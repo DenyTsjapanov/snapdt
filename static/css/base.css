@@ -31,7 +31,7 @@ a {
     }
 }
 
-#topnav {
+#topnav, footer {
     background: #252b31;
 }
 
@@ -48,7 +48,7 @@ a {
 .home-header2 {
     width: 300px;
     height: 300px;
-    top: 100px;
+    top: 50px;
     right: -150px;
     background: #bbbfca;
     position: relative;
@@ -220,4 +220,12 @@ a {
 .scrolled-up {
     transform: translateY(0);
     transition: all 0.3s ease-in-out;
+}
+
+.social-media-icon {
+    border-radius: 0;
+}
+
+.social-media-icon i {
+    font-size: 20px;
 }
