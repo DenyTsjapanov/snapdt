@@ -224,3 +224,7 @@ a {
 #other_projects:hover {
     color: #3c5b74;
 }
+
+.toast {
+    z-index: 11;
+}
