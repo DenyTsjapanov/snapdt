@@ -226,5 +226,5 @@ a {
 }
 
 .toast {
-    z-index: 11;
+    z-index: 9999!important;
 }
