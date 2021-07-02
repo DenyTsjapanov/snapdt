@@ -1,4 +1,4 @@
-<img src="docs/img/responsive.png" width="400" alt="Responsive">
+<img src="docs/img/responsive.png" width="100vw" alt="Responsive">
 
 [View the live project here.](https://snapdt.herokuapp.com)
 
