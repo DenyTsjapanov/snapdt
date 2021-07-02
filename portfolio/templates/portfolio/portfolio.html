@@ -15,8 +15,9 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="text-white text-uppercase" data-aos="fade-right"><strong>View our work</strong></h2>
+            <h6 class="fw-bold" data-aos="fade-right" data-aos-delay="200">and have them printed on a canvas, delivered to your doorstep!</h6>
             {% for c in current_categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'portfolio:items' %}?category={{ c.name }}">
+            <a class="category-badge text-decoration-none fw-bold" href="{% url 'portfolio:items' %}?category={{ c.name }}">
                 <span class="p-2 mt-2 badge bg-light text-dark">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
@@ -71,7 +72,9 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <h4 class="mb-0"><a class="text-white" href="{% url 'portfolio:item_detail' item.id %}"><strong>{{ item.name }}</strong></a></h4>
+                            <h4 class="mb-0"><a class="text-white"
+                                    href="{% url 'portfolio:item_detail' item.id %}"><strong>{{ item.name }}</strong></a>
+                            </h4>
                             {% if item.category %}
                             <p class="small mt-1 mb-0">
                                 <a class="text-light category-link"
@@ -80,19 +83,6 @@
                             </p>
                             {% endif %}
                         </div>
-                        <!-- <div class="card-footer bg-transparent pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col item-rating">
-                                    {% if item.rating %}
-                                    <small class="text-light"><i class="bi bi-star-fill"></i>{{ item.rating }} /
-                                        5</small>
-                                    {% else %}
-                                    <small class="text-light">No Rating</small>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        <hr> -->
                     </div>
                 </div>
                 {% endfor %}
